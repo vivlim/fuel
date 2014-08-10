@@ -19,6 +19,11 @@ def fill_form(forminput, url):
             if field_name in forminput:
                 c.value = str(forminput[field_name])
 
+        if 'name' in c.attrs:
+			field_name = str.strip(c.attrs['name'])
+			if field_name in forminput:
+				c.value = str(forminput[field_name])
+
         print c.attrs
 
     br.submit()
